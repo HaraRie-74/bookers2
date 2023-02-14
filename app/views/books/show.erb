@@ -1,0 +1,15 @@
+<h1>Book detail</h1>
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <%= image_tag @book.user.get_profile_image(100,100) %></br >
+        <%= link_to @book.user.name,user_path(@book.user_id) %>
+      </td>
+      <td><%= @book.title %></td>
+      <td><%= @book.body %></td>
+      <td><%= link_to "Edit",edit_book_path %></td>
+      <td><%= link_to "Destroy",book_path(@book.id),method: :delete %></td>
+    </tr>
+  </tbody>
+</table>

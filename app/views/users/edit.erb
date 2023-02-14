@@ -1,0 +1,14 @@
+<h1>
+  User info
+</h1>
+
+<%= form_with model:@user,url:user_path,method: :patch do |f| %>
+  <label for="user_name">Name</label></br >
+  <%= f.text_field:name %></br >
+  <label for="user_image">image</label></br >
+  <%= f.file_field:profile_image,accept:"image/*" %></br >
+  <label for="user_intorduction">introduction</label></br >
+  <%= f.text_area:introduction%>
+  <%= f.submit "Update Usesr" %>
+  
+<% end %>

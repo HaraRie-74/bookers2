@@ -12,7 +12,7 @@
 
   <body>
     <header>
-      <%= link_to "Home",new_book_path %>
+      <%= link_to "Home",user_path(current_user.id) %>
       <% if user_signed_in? %>
         <%= link_to "Users",users_path %>
         <%= link_to "Books",books_path%>
