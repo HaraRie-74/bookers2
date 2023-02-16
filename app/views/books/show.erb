@@ -1,3 +1,9 @@
+<div>
+  <%= flash[:notice] %>
+</div>
+
+<%= render 'users/list',user:@user,book_new:@book_new %>
+
 <h1>Book detail</h1>
 <table>
   <tbody>
@@ -8,8 +14,10 @@
       </td>
       <td><%= @book.title %></td>
       <td><%= @book.body %></td>
-      <td><%= link_to "Edit",edit_book_path %></td>
-      <td><%= link_to "Destroy",book_path(@book.id),method: :delete %></td>
+      <% if @book.user==current_user %>
+        <td><%= link_to "Edit",edit_book_path %></td>
+        <td><%= link_to "Destroy",book_path(@book.id),method: :delete,"data-confirm"=>"本当に削除しますか？" %></td>
+      <% end %>
     </tr>
   </tbody>
 </table>
