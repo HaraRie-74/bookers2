@@ -1,6 +1,22 @@
 <%= flash[:notice] %>
 
-<h1>welcome to Bookers!!</h1>
+<div class="container">
+  <div class="row">
+    <div class="mx-auto col-11 col-sm-11 col-lg-8 col-xl-6">
+      <h1>welcome to <i class="fas fa-book"></i><strong>Bookers</strong>!!</h1>
 
-<%= link_to "Log in",new_user_session_path %>
-<%= link_to "Sign up",new_user_registration_path %>
+      <p>in<i class="fas fa-book"></i><strong>Bookers</strong>,</p>
+      <p>you can share and exchange your opinions,inpressions,and emotions</p>
+      <p>about various books!</p>
+
+　　　<div class="mx-auto col-10">
+        <%= link_to new_user_session_path do %>
+          <botton type="botton" class="btn btn-sm btn-block btn-info mb-3">Log in</botton>
+        <% end %>
+        <%= link_to new_user_registration_path do %>
+          <button type="botton" class="btn btn-sm btn-block btn-success">Sign up</button>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
