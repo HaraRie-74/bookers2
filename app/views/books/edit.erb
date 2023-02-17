@@ -1,3 +1,6 @@
+<div class="container">
+<div class="row">
+<div class="col-md-10 col-lg-5 mx-auto">
 <h1>Editing Book</h1>
 
 <% if @book.errors.any? %>
@@ -10,14 +13,20 @@
 <% end %>
 
 <%= form_with model:@book,url:book_path,method: :patch do |f| %>
-  <p>Title</p>
-  <%= f.text_field:title %>
-  <p>Opinion</p>
-  <%= f.text_area:body %></br >
-  <%= f.submit "Update Book" %>
-  </br >
+  <label for="book_title">Title</label>
+  <div class="row mb-3 ml-2">
+    <%= f.text_field:title,class:"col-10" %>
+  </div>
+  <label for="book_body">Opinion</label>
+  <div class="row mb-3 ml-2">
+    <%= f.text_area:body,class:"col-10" %>
+  </div>
+  <%= f.submit "Update Book",class:"btn btn-success mb-3" %></br >
   <%= link_to "Show",book_path(@book.id) %>
   <span>|</span>
   <%= link_to "Back",books_path %>
 
 <% end %>
+</div>
+</div>
+</div>
