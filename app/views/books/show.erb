@@ -2,10 +2,13 @@
   <%= flash[:notice] %>
 </div>
 
+<div class="container">
+  <div class="row">
 <%= render 'users/list',user:@user,book_new:@book_new %>
 
+<div class="col-md-8 offset-md-1">
 <h1>Book detail</h1>
-<table>
+<table class="table">
   <tbody>
     <tr>
       <td>
@@ -21,3 +24,7 @@
     </tr>
   </tbody>
 </table>
+
+</div>
+</div>
+</div>

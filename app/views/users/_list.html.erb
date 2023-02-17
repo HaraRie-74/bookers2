@@ -1,4 +1,4 @@
-<div class="col-12 col-lg-3">
+<div class="col-md-3">
   <div class="user">
     <h1>User info</h1>
       <%= image_tag user.get_profile_image(100,100) %>
@@ -15,26 +15,20 @@
           </tr>
         </tbody>
       </table>
-
-      <% if user==current_user %>
+      <div class="row">
         <%= link_to edit_user_path(user.id) do %>
-          <button type="button" class="btn btn-outline-secondary btn-block my-5"><i class="fa-solid fa-user-gear"></i></button>
+          <button type="button" class="btn btn-outline-secondary btn-block my-5"><i class="fas fa-user-cog"></i></button>
         <% end%>
-      <% end %>
-      
+      </div>
   </div>
 
   <div class="new_book">
-    <h1>New Book</h1>
+    <h1>New book</h1>
     <%= form_with model:book_new,url:books_path,method: :post do |f| %>
-      <div class="form-group">
         <label for="title">Title</label></br >
-        <input class="form-control" id="title" type="text">
-      </div>
-      <div class="form-group">
+        <%= f.text_field:title %></br >
         <label for="body">Opinion</label></br >
-        <input class="form-control input-lg" id="body" type="text">
-      </div>
+        <%= f.text_area:body %></br >
       <button class="btn btn-success mb-4" type="submit">Create Book</button>
     <% end %>
   </div>
